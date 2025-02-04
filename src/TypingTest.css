@@ -1,0 +1,144 @@
+/* Overall container: nearly full width with some margins */
+.container {
+    background-color: #fafafa;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  
+  /* Header: flex layout with the Change Text button on the top left */
+  .header {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 10px;
+  }
+  
+  .header .header-text {
+    flex-grow: 1;
+    text-align: center;
+    margin-left: 20px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 300;
+  }
+  
+  .header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+  }
+  
+  .header button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  /* Text input area for changing text */
+  /* This overlay now covers the top section and is centered vertically. */
+  .text-input {
+    position: absolute;
+    top: 150px; /* Adjust this value to move it lower */
+    left: 0;
+    width: 100%;
+    height: 60vh; /* Same as the top text area */
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(128,128,128,0.5);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-input textarea {
+    width: 90%;
+    height: 70%;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  .text-input button {
+    margin-top: 20px;
+    padding: 6px 12px;
+    font-size: 16px;
+  }
+  
+  /* Content area: centers the two main sections */
+  .content {
+    width: 95%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Top full-text window: nearly full width, 60% of viewport height */
+  #fullTextContainer {
+    width: 100%;
+    height: 60vh;
+    overflow-y: auto;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid rgba(128,128,128,0.5);
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+  }
+  
+  #fullTextContainer span {
+    cursor: default;
+  }
+  
+  /* Metrics container */
+  #metricsContainer {
+    width: 100%;
+    height: 10vh;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid rgba(128,128,128,0.5);
+    border-radius: 8px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #metricsContainer span {
+    margin: 0 20px;
+  }
+  
+  /* Blinking effect */
+  .blink {
+    animation: blink 1s steps(2, start) infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  
+  /* Correct and incorrect coloring */
+  .correct { color: #2ecc71; }
+  .incorrect { color: #e74c3c; }
+  
+  /* Current character indicator */
+  .current {
+    border-bottom: 2px solid #f1c40f;
+    animation: blink 1s steps(2, start) infinite;
+  }
+  
